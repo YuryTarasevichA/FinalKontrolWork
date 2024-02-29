@@ -1,0 +1,100 @@
+yury@yury-VirtualBox:~$ cat > Домашние_животные
+собаки
+кошки
+хомяки
+yury@yury-VirtualBox:~$ cat > Вьючные_животные
+лошади
+верблюды
+ослы
+yury@yury-VirtualBox:~$ cat Домашние_животные Вьючные_животные > Животные
+yury@yury-VirtualBox:~$ cat Животные 
+собаки
+кошки
+хомяки
+лошади
+верблюды
+ослы
+yury@yury-VirtualBox:~$ mv Животные Друзья_человека
+yury@yury-VirtualBox:~$ mkdir Животные_друзья
+yury@yury-VirtualBox:~$ mv Друзья_человека Животные_друзья/
+yury@yury-VirtualBox:~$ sudo apt update
+yury@yury-VirtualBox:~$ sudo apt install mysql-server
+Чтение списков пакетов… Готово    
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Уже установлен пакет mysql-server самой новой версии (8.0.36-0ubuntu0.22.04.1).
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  fakeroot ibverbs-providers libboost-iostreams1.74.0 libboost-thread1.74.0 libdaxctl1 libdistro-info-perl libdpkg-perl libfakechroot libfakeroot libfile-fcntllock-perl libgfapi0 libgfrpc0 libgfxdr0
+  libglusterfs0 libibverbs1 libiscsi7 libndctl6 libpmem1 libpmemobj1 librados2 librbd1 librdmacm1 liburing2 ubuntu-fan
+Для их удаления используйте «sudo apt autoremove».
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 90 пакетов не обновлено.
+yury@yury-VirtualBox:~$ apt download zip
+Пол:1 http://by.archive.ubuntu.com/ubuntu jammy/main amd64 zip amd64 3.0-12build2 [176 kB]
+Получено 176 kB за 0с (1.228 kB/s)
+yury@yury-VirtualBox:~$ ls
+ gb           mydb     snap    zip_3.0-12build2_amd64.deb   Вьючные_животные   Домашние_животные   Загрузки      Музыка         'Рабочий стол'
+ geekbrains   shared   work5   Видео                        Документы          Животные_друзья     Изображения   Общедоступные   Шаблоны      
+yury@yury-VirtualBox:~$ sudo dpkg -i zip_3.0-12build2_amd64.deb
+[sudo] пароль для yury: 
+(Чтение базы данных … на данный момент установлено 186244 файла и каталога.)
+Подготовка к распаковке zip_3.0-12build2_amd64.deb …
+Распаковывается zip (3.0-12build2) на замену (3.0-12build2) …
+Настраивается пакет zip (3.0-12build2) …
+Обрабатываются триггеры для man-db (2.10.2-1) …
+yury@yury-VirtualBox:~$ sudo dpkg -r zip
+dpkg: проблемы с зависимостями не позволяют удалить пакет zip:
+ ubuntu-desktop-minimal зависит от zip.
+ ubuntu-desktop зависит от zip.
+ file-roller зависит от zip.
+
+dpkg: ошибка при обработке пакета zip (--remove):
+ проблемы с зависимостями — не удаляется
+При обработке следующих пакетов произошли ошибки:
+ zip
+yury@yury-VirtualBox:~$ sudo dpkg -r --force-depends zip
+dpkg: zip: имеются проблемы с зависимостями, но по вашему указанию
+он всё равно будет удалён:
+ ubuntu-desktop-minimal зависит от zip.
+ ubuntu-desktop зависит от zip.
+ file-roller зависит от zip.
+
+(Чтение базы данных … на данный момент установлено 186244 файла и каталога.)
+Удаляется zip (3.0-12build2) …
+Обрабатываются триггеры для man-db (2.10.2-1) …
+yury@yury-VirtualBox:~$ history
+329  cat > Домашние_животные
+  330  ls -l
+  331  cat > Вьючные_животные
+  332  cat Домашние_животные Вьючные_животные > Животные
+  333  cat Животные
+  334  mv Животные Друзья_человека
+  335  mkdir Животные_друзья
+  336  mv Друзья_человека Животные_друзья/
+  337  sudo apt update
+  338  sudo apt install mysql-server
+  339  wget http://link_to_package/package.deb
+  340  sudo dpkg -i package.deb
+  341  apt moo
+  342  apt download zip
+  343  ls
+  344  sudo dpkg -i zip_3.0-12build2_amd64.deb
+  345  sudo dpkg -r yury@yury-VirtualBox:~$ apt download zip
+  346  yury@yury-VirtualBox:~$ sudo dpkg -i zip_3.0-12build2_amd64.deb
+  347  [sudo] пароль для yury:
+  348  (Чтение базы данных … на данный момент установлено 186244 файла и каталога.)
+  349  Подготовка к распаковке zip_3.0-12build2_amd64.deb …
+  350  Распаковывается zip (3.0-12build2) на замену (3.0-12build2) …
+  351  Настраивается пакет zip (3.0-12build2) …
+  352  Обрабатываются триггеры для man-db (2.10.2-1) …
+  353  ls
+  354  sudo dpkg -r zip
+  355  zip --help
+  356  sudo dpkg -r zip_3.0-12build2_amd64.deb
+  357  sudo dpkg -r example
+  358  sudo dpkg -r zip
+  359  sudo dpkg -i zip_3.0-12build2_amd64.deb
+  360  sudo dpkg -r zip
+  361  sudo dpkg -r --force-depends zip
+  362  history
+
+
