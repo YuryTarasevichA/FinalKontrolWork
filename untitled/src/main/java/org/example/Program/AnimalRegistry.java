@@ -1,4 +1,4 @@
-package org.example.Animals.AnimalsHome.Program;
+package org.example.Program;
 
 import org.example.Animals.Animal;
 import org.example.Animals.AnimalsHome.HomeAnimal;

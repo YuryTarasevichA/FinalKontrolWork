@@ -1,4 +1,4 @@
-package org.example.Animals.AnimalsHome.Program;
+package org.example.Program;
 
 public class Count implements AutoCloseable {
     private int count;

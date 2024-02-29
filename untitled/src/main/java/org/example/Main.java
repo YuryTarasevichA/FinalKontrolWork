@@ -2,10 +2,12 @@ package org.example;
 
 import org.example.Animals.Animal;
 import org.example.Animals.AnimalsHome.HomeAnimal;
-import org.example.Animals.AnimalsHome.Program.AnimalRegistry;
-import org.example.Animals.AnimalsHome.Program.Count;
+import org.example.Program.AnimalFileHandler;
+import org.example.Program.AnimalRegistry;
+import org.example.Program.Count;
 import org.example.Animals.AnimalsPack.PackAnimal;
 
+import java.util.List;
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -23,6 +25,7 @@ public class Main {
                 System.out.println("2. Определить класс животного");
                 System.out.println("3. Обучить новую команду упряжке");
                 System.out.println("4. Показать список команд животного");
+                System.out.println("5. Показать список животных");
                 System.out.println("0. Выйти");
 
                 int choice = scanner.nextInt();
@@ -40,6 +43,8 @@ public class Main {
                         } else if ("pack".equalsIgnoreCase(type)) {
                             animalRegistry.addAnimal(new PackAnimal(name));
                         }
+                        AnimalFileHandler.writeAnimalsToFile(animalRegistry.getAnimals());
+
                         break;
                     case 2:
                         System.out.println("Введите имя животного для определения класса: ");
@@ -70,6 +75,12 @@ public class Main {
                                 PackAnimal packAnimal = (PackAnimal) animal;
                                 System.out.println(packAnimal.getName() + ": " + packAnimal.getCommand());
                             }
+                        }
+                        break;
+                    case 5:
+                        List<Animal> loadedAnimals = AnimalFileHandler.readAnimalsFromFile();
+                        if (loadedAnimals != null) {
+                            animalRegistry.setAnimals(loadedAnimals);
                         }
                         break;
                     case 0:
