@@ -6,4 +6,8 @@ public class HomeAnimal extends Animal {
     public HomeAnimal(String name, int id, String birthDate) {
         super(name, id, birthDate);
     }
+
+    public HomeAnimal(String name) {
+        super(name);
+    }
 }

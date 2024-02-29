@@ -11,6 +11,9 @@ public abstract class Animal {
         this.birthDate = birthDate;
     }
 
+    public Animal(String name) {
+    }
+
     public String getName() {
         return name;
     }

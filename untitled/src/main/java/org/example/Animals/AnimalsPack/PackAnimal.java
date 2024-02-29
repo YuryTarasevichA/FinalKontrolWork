@@ -13,6 +13,10 @@ public class PackAnimal extends Animal {
         this.command = command;
     }
 
+    public PackAnimal(String name) {
+        super(name);
+    }
+
     public String getCommand() {
         return command;
     }
